@@ -9,7 +9,7 @@ public class Pipe : MonoBehaviour
     private float _deadZone = -10;
     void Start()
     {
-        moveSpeed = 2.0f;
+        moveSpeed = 2f;
     }
 
     // Update is called once per frame

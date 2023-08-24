@@ -12,7 +12,7 @@ public class LogicMananger : MonoBehaviour
 {
     //组件定义
     public PipeSpawn pipeSpawn;
-    public double decreaseAmount = 0.2;
+    public double decreaseAmount = 0.5;
     private int currentStageScore; // 当前阶段的积分
     
     //基础UI逻辑
@@ -43,9 +43,9 @@ public class LogicMananger : MonoBehaviour
         {
             // 逐渐减小pipeSpawn的值
             pipeSpawn.spawnRate -= decreaseAmount;
-            if (pipeSpawn.spawnRate<=2)
+            if (pipeSpawn.spawnRate<=1.5)
             {
-                pipeSpawn.spawnRate = 2;
+                pipeSpawn.spawnRate = 1.5;
             }
             preScore++;
         }
@@ -68,6 +68,11 @@ public class LogicMananger : MonoBehaviour
     public void ReStart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void EXitGame()
+    {
+        Application.Quit();
     }
 
     public void GameOver()
